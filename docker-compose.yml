@@ -1,0 +1,15 @@
+services:
+  database:
+    image: postgres:latest
+    container_name: papertrail_db
+    ports:
+      - '5434:5432'
+    environment:
+      POSTGRES_USER: developer
+      POSTGRES_PASSWORD: developer
+      POSTGRES_DB: papertrail_db
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
