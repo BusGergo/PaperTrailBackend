@@ -10,7 +10,7 @@ export class UsersService {
     private userRepository: Repository<User>,
   ) {}
 
-  findOne(email: string): Promise<User | null> {
+  findOneByEmail(email: string): Promise<User | null> {
     return this.userRepository.findOne({ where: { email } });
   }
 }
